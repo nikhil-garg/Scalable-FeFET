@@ -139,7 +139,7 @@ parameter integer ndom = 2000 from (0:inf);
       vpre = vgb;
       time_pre = $abstime;
       Pcurr = Pr * sum / ndom + 1e6 * vgb * epife * epiv / tfe;
-      igb = width * length * ddt(Pcurr);
+      igb = 1e-6 * width * length * ddt(Pcurr);
 
       I(vgate, vbody)    <+ igb;
    end
